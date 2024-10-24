@@ -10,7 +10,7 @@ public class DelimiterParser {
     public void parseDelimiters(String inputString) {
         int currentIndex = 0;
         while (inputString.startsWith("//", currentIndex)) {
-            int delimiterStartIndex = currentIndex + 2;
+            int delimiterStartIndex = currentIndex + "//".length();
             int delimiterEndIndex = inputString.indexOf("\\n", delimiterStartIndex);
             if (delimiterEndIndex == -1) {
                 throw new IllegalArgumentException("'//'에 매칭되는 '\\n' 이 있어야 합니다.");
@@ -19,7 +19,7 @@ public class DelimiterParser {
                 throw new IllegalArgumentException("커스텀 구분자로는 길이가 1인 문자를 지정해야 합니다.");
             }
             delimiters.add(inputString.charAt(delimiterStartIndex));
-            currentIndex = delimiterEndIndex + 2;
+            currentIndex = delimiterEndIndex + "\\n".length();
         }
         valueString = inputString.substring(currentIndex);
     }
