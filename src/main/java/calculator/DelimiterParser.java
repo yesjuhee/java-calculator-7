@@ -7,7 +7,11 @@ public class DelimiterParser {
     private final List<Character> delimiters = new ArrayList<>();
     private String expression;
 
-    public void parseDelimiters(String input) {
+    DelimiterParser(String input) {
+        parseDelimiters(input);
+    }
+
+    private void parseDelimiters(String input) {
         int currentIndex = 0;
         while (input.startsWith("//", currentIndex)) {
             int delimiterStartIndex = currentIndex + "//".length();
