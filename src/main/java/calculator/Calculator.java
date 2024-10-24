@@ -3,20 +3,20 @@ package calculator;
 import java.util.List;
 
 public class Calculator {
-    public static int calculateString(String valueString, List<Character> delimiters) {
-        String[] tokens = splitString(valueString, delimiters);
+    public static int calculateString(String expression, List<Character> delimiters) {
+        String[] numberTokens = splitString(expression, delimiters);
 
         int sum = 0;
-        for (String token : tokens) {
-            if (token.isEmpty()) {
+        for (String numberToken : numberTokens) {
+            if (numberToken.isEmpty()) {
                 continue;
             }
             try {
-                int tokenValue = Integer.parseInt(token);
-                if (tokenValue < 0) {
+                int numberTokenValue = Integer.parseInt(numberToken);
+                if (numberTokenValue < 0) {
                     throw new IllegalArgumentException("숫자는 양수만 입력할 수 있습니다.");
                 }
-                sum += tokenValue;
+                sum += numberTokenValue;
             } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("구분자와 양수만 입력할 수 있습니다.");
             }
@@ -24,11 +24,11 @@ public class Calculator {
         return sum;
     }
 
-    private static String[] splitString(String target, List<Character> delimiters) {
+    private static String[] splitString(String expression, List<Character> delimiters) {
         for (char delimiter : delimiters) {
-            target = target.replace(delimiter, ',');
+            expression = expression.replace(delimiter, ',');
         }
-        target = target.replace(':', ',');
-        return target.split(",");
+        expression = expression.replace(':', ',');
+        return expression.split(",");
     }
 }
