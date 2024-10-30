@@ -1,12 +1,14 @@
 # java-calculator-precourse
 
+## 문자열 덧셈 계산기
+
 우아한테크코스 7기 프리코스 1주차 미션 저장소
 
-- [yesjuhee 브랜치](https://github.com/yesjuhee/java-calculator-7/tree/yesjuhee) : 미션 수행 코드
+- [yesjuhee 브랜치](https://github.com/yesjuhee/java-calculator-7/tree/yesjuhee): 미션 수행 코드
 - [main 브랜치](https://github.com/yesjuhee/java-calculator-7/tree/main): 미션 종료 후 리팩토링을 진행한 코드
 - [PR 제출 주소](https://github.com/woowacourse-precourse/java-calculator-7/pull/690)
 
-## 기능 목록
+### 기능 목록
 
 - 문자열을 입력 받아서 저장할 수 있다.
 - 문자열에서 커스텀 구분자를 추출할 수 있다.
